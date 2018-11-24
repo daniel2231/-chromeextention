@@ -1,31 +1,37 @@
-function openSettings() {
+document.getElementById("settings-button").addEventListener('click', openSettings);
+
+function openSettings() { 
+    // console.log("open settings")
     document.getElementById("settings").classList.toggle("settings-open");
-    document.getElementById(settings-button).addEventListener('click', openSettings);
+    // console.log("settings")
 }
 
 var userName = localStorage.getItem('receivedName');
 
 function saveName() {
-    console.log("savename!!");
+    // console.log("savename!!");
 
     localStorage.setItem('receivedName', userName);
-    console.log("okay");
+    // console.log("okay");
 
     userName = localStorage.getItem('receivedName');
-    console.log("completed: username == " + userName);
+    // console.log("completed: username == " + userName);
     window.location.reload();
-    console.log('come to here?');
+    // console.log('come to here?');
 }
 
 function changeName() {
    userName = document.getElementById("name-input").value;
-   console.log("username: " + userName);
+    //console.log("username: " + userName);
 
    saveName();
 }
 
 function getGreeting() {
-    console.log("getGreeting!");
+    // console.log("getGreeting!");
+    if (userName == null) {
+        userName = "friend";
+     }
     document.getElementById("greeting").innerHTML  = `Hello, ${userName}. Have a great day!`;
    }
 
@@ -33,9 +39,24 @@ function getGreeting() {
 getGreeting()
 document.getElementById("submit").addEventListener("click", function(e) {
     e.preventDefault()
-    console.log("clicked!");
+    // console.log("clicked!");
 
     changeName();
  });
 
+function startTime() {
+    var today = new Date();
+    var h = today.getHours();
+    var m = today.getMinutes();
+    var s = today.getSeconds();
+    m = checkTime(m);
+    s = checkTime(s);
+    document.getElementById('txt').innerHTML =
+    h + ":" + m + ":" + s;
+    var t = setTimeout(startTime, 500);
+}
+function checkTime(i) {
+    if (i < 10) {i = "0" + i};
+    return i;
+}
  
