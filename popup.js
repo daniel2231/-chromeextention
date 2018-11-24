@@ -3,3 +3,5 @@ function openSettings() {
 }
 
 document.getElementById(settings-)
+
+console.log(1);
