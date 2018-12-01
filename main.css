@@ -41,15 +41,21 @@ form {
 }
 
 .greeting {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     font-size: 50px;
     color: white;
+    font-style: normal;
 }
 
 #txt {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     font-size: 70px;
     color: white;
+    font-style: normal;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin-top: 100px;
 }
 body {
     background-image: url("background.jpg");

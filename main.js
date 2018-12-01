@@ -44,7 +44,10 @@ document.getElementById("submit").addEventListener("click", function(e) {
     changeName();
  });
 
-function startTime() {
+ document.getElementById("settings-button").onload = function() {startTime()}
+
+ function startTime() {
+     console.log('time start')
     var today = new Date();
     var h = today.getHours();
     var m = today.getMinutes();
@@ -56,7 +59,6 @@ function startTime() {
     var t = setTimeout(startTime, 500);
 }
 function checkTime(i) {
-    if (i < 10) {i = "0" + i};
+    if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
     return i;
 }
- 
