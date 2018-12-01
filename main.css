@@ -6,11 +6,13 @@
     transition: transform 1s;
 }
 
-input {
+.name-input {
     padding: 5px;
     font-size: 12px;
     width: 150px;
     height: 20px;
+    border-radius: 25px;
+
 }
 
 button {
@@ -35,9 +37,10 @@ form {
 
 .greeting-container {
     display: flex;
+    text-align: center;
+    flex-direction: column;
     justify-content: center;
     align-content: center;
-    margin-top: 120px;
 }
 
 .greeting {
@@ -45,20 +48,47 @@ form {
     font-size: 50px;
     color: white;
     font-style: normal;
+    margin: -10px;
 }
 
 #txt {
     font-family: 'Open Sans', sans-serif;
-    font-size: 70px;
+    font-size: 160px;
     color: white;
     font-style: normal;
+    margin-top: 120px;
+    margin-bottom: -10px;
+}
+.accomplishInput {
     display: flex;
     justify-content: center;
     align-content: center;
-    margin-top: 100px;
 }
+#goal {
+    border: none;
+    border-bottom: 2px solid white;
+    background: none;
+    text-align: center;
+    font-size: 30px;
+    color: white;
+}
+
+h3 {
+    color: white;
+    font-size: 30px;
+}
+
 body {
     background-image: url("background.jpg");
     background-size: 100% 270%;
     background-repeat: no-repeat;
+}
+
+li {
+    font-family: 'Open Sans', sans-serif;
+    text-align: left;
+    font-size: 30px;
+    list-style: none;
+    margin: 0;
+    color: white;
 }

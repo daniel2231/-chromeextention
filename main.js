@@ -6,6 +6,7 @@ function openSettings() {
     // console.log("settings")
 }
 
+//Getting Name
 var userName = localStorage.getItem('receivedName');
 
 function saveName() {
@@ -44,21 +45,41 @@ document.getElementById("submit").addEventListener("click", function(e) {
     changeName();
  });
 
- document.getElementById("settings-button").onload = function() {startTime()}
+ //Clock
+ window.onload = startTime()
 
  function startTime() {
-     console.log('time start')
+
     var today = new Date();
     var h = today.getHours();
     var m = today.getMinutes();
-    var s = today.getSeconds();
     m = checkTime(m);
-    s = checkTime(s);
     document.getElementById('txt').innerHTML =
-    h + ":" + m + ":" + s;
+    h + ":" + m ;
     var t = setTimeout(startTime, 500);
 }
 function checkTime(i) {
-    if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+    if (i < 10) {i = "0" + i}; 
     return i;
 }
+
+//TodoList
+function newList() {
+    var item = document.getElementById("goal").value;
+    var ol = document.getElementById("toDoList");
+    var li = document.createElement("li");
+    li.appendChild(document.createTextNode("- " + item));
+    ol.appendChild(li);
+    document.getElementById("goal").value = "";
+    li.onclick = removeItem;
+  }
+  
+  document.body.onkeyup = function(e) {
+    if (e.keyCode == 13) {
+      newList();
+    }
+  };
+  
+  function removeItem(e) {
+    e.target.parentElement.removeChild(e.target);
+  }
