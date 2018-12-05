@@ -59,12 +59,8 @@ form {
     margin-top: 120px;
     margin-bottom: -10px;
 }
-.accomplishInput {
-    display: flex;
-    justify-content: center;
-    align-content: center;
-}
-#goal {
+
+#input {
     border: none;
     border-bottom: 2px solid white;
     background: none;
@@ -86,9 +82,18 @@ body {
 
 li {
     font-family: 'Open Sans', sans-serif;
-    text-align: left;
+    text-align: center;
     font-size: 30px;
     list-style: none;
     margin: 0;
     color: white;
+    position: fixed;
+}
+
+.accomplishInput {
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    flex-direction: column;
+    text-align: center;
 }

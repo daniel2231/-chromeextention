@@ -64,22 +64,22 @@ function checkTime(i) {
 }
 
 //TodoList
-function newList() {
-    var item = document.getElementById("goal").value;
-    var ol = document.getElementById("toDoList");
-    var li = document.createElement("li");
-    li.appendChild(document.createTextNode("- " + item));
-    ol.appendChild(li);
-    document.getElementById("goal").value = "";
-    li.onclick = removeItem;
+function newItem() {
+	var item = document.getElementById('input').value;
+	var ul = document.getElementById("list");
+	var li = document.createElement('li');
+  li.appendChild(document.createTextNode("- "+item));
+  ul.appendChild(li);
+  document.getElementById('input').value="";
+  li.onclick = removeItem;
+}
+
+document.body.onkeyup = function(e){
+      if(e.keyCode == 13){
+        newItem();
+      }
   }
-  
-  document.body.onkeyup = function(e) {
-    if (e.keyCode == 13) {
-      newList();
-    }
-  };
-  
-  function removeItem(e) {
-    e.target.parentElement.removeChild(e.target);
-  }
+
+function removeItem(e) {
+  e.target.parentElement.removeChild(e.target);
+}
